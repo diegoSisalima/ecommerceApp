@@ -34,7 +34,6 @@ function App() {
           </Route>
         </Routes>
       </HashRouter>
-      hellow world
     </div>
   );
 }

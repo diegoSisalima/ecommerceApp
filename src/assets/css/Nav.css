@@ -14,8 +14,9 @@
   justify-content: space-between;
   background: var(--bg-nav);
   padding: 0 1rem;
-  position: relative;
   z-index: 90;
+  position: sticky;
+  top: 0;
 }
 .nav img {
   width: 1.7rem;
@@ -143,5 +144,8 @@
   .nav a {
     width: 95%;
     justify-content: center;
+  }
+  .nav a:hover {
+    transform: scale(1.05);
   }
 }

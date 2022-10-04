@@ -20,8 +20,6 @@ button {
   gap: 1rem;
 }
 
-
-
 .home .product-card {
   position: relative;
   width: 300px;
@@ -81,7 +79,6 @@ button {
 .product {
   margin: 0 auto;
   padding: 13px 20px;
-
 }
 
 @media (min-width: 1300px) {
@@ -215,7 +212,6 @@ button {
   border: 1px solid lightgray;
   line-height: 1.7;
   padding: 0 20px;
-
 }
 
 .productButton {

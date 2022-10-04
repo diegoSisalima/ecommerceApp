@@ -1,0 +1,66 @@
+div.login-container {
+  height: 94vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form.login {
+  /*variables*/
+  --max-width-form: 400px;
+  --bg-color-form: #003f5c;
+  --color: whitesmoke;
+  --color-placeholder: #cbd8df;
+  --bg-color-button: chocolate;
+
+  max-width: var(--max-width-form);
+
+  padding: 1rem;
+  text-align: center;
+  min-width: calc(375px - (16px * 2));
+  background-color: var(--bg-color-form);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+form.login > * {
+  color: var(--color);
+}
+form.login .input {
+  min-height: 24px;
+  background-color: transparent;
+  border-style: none;
+  border-bottom: solid 2px #cbd8df;
+  padding: 0 0.5rem;
+  font-size: 16px;
+}
+form.login .input:hover {
+  border-bottom: solid 4px #cbd8df;
+}
+form.login .input:focus {
+  outline: none;
+  border-bottom: solid 4px #cbd8df;
+}
+form.login .input::placeholder {
+  color: var(--color-placeholder);
+  font-size: 16px;
+}
+form.login .button {
+  min-height: 42px;
+  background-color: var(--bg-color-button);
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: x-large;
+  border-radius: 6px;
+}
+form.login .button:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+button {
+  margin: 5px;
+  background-color: transparent;
+  border: none;
+}

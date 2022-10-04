@@ -2,6 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+/*css */
+import "../assets/css/Login.css";
 
 const Login = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -40,29 +42,27 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="form-users">
-      <h1>Login</h1>
-      <input
-        className="input"
-        type="email"
-        placeholder="email *"
-        required
-        {...register("email")}
-      />
-      <input
-        className="input"
-        type="password"
-        placeholder="password *"
-        required
-        {...register("password")}
-      />
-      <button className="button">REGISTER</button>
-      <button className="button" onClick={clear} type="button">
-        {" "}
-        Clear
-      </button>
-      {/*type="button" para que no actue como un submit */}
-    </form>
+    <div className="login-container">
+      <form onSubmit={handleSubmit(submit)} className="login">
+        <h1>Login</h1>
+        <input
+          className="input"
+          type="email"
+          placeholder="email *"
+          required
+          {...register("email")}
+        />
+        <input
+          className="input"
+          type="password"
+          placeholder="password *"
+          required
+          {...register("password")}
+        />
+        <button className="button">Login</button>
+        {/*type="button" para que no actue como un submit */}
+      </form>
+    </div>
   );
 };
 
