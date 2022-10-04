@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
-import react from "../assets/react.svg";
-import "../assets/css/Nav.css";
 import { useNavigate } from "react-router-dom";
+/*IMAGES */
+import react from "../assets/react.svg";
+import user from "..//assets/img/user.svg";
+import cart from "..//assets/img/cart.svg";
+import archive from "..//assets/img/archive.svg";
+/*Css */
+import "../assets/css/Nav.css";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -46,19 +51,19 @@ const Nav = () => {
         <li>
           {/* <a href="#/">Enlace uno</a> */}
           <Link to="/">
-            <img src={react} alt="" />
+            <img src={user} alt="" />
           </Link>
         </li>
         <li>
           {/* <a href="#/">Enlace uno</a> */}
           <Link to="/">
-            <img src={react} alt="" />
+            <img src={archive} alt="" />
           </Link>
         </li>
         <li>
           {/* <a href="#/">Enlace uno</a> */}
           <Link to="/">
-            <img src={react} alt="" />
+            <img src={cart} alt="" />
           </Link>
         </li>
       </div>
