@@ -1,0 +1,19 @@
+.cart {
+  /*variables*/
+  --top-position: 40px;
+  --bg-color: chocolate;
+
+  position: fixed;
+  /* right: 0; */
+  top: var(--top-position);
+  width: 250px;
+  height: 100%;
+  background-color: var(--bg-color);
+  z-index: 89;
+}
+.cart.show {
+  right: 0;
+}
+.cart.hide {
+  right: -100%;
+}

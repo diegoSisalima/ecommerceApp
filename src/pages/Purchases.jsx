@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { getPurchasesThunk } from "../store/slices/purchases.slice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import {format} from 'date-fns'
 
 const Purchases = () => {
   const dispatch = useDispatch();
@@ -21,9 +20,9 @@ const Purchases = () => {
       <h1>Estas en Purchases</h1>
       {purchases.map((element) => (
         <div className="purchase-item">
-          <div className="header">       
+          <div className="header">
             <h3> {element.createdAt} </h3>
-            {format(new Date(),' ' )}
+            {/* {format(new Date(), " ")} */}
           </div>
           {element.cart.products.map((subElement) => (
             <ul className="purchase-products-list">
@@ -37,9 +36,9 @@ const Purchases = () => {
               </li>
             </ul>
           ))}
-        </div >
+        </div>
       ))}
-    </div >
+    </div>
   );
 };
 

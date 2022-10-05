@@ -59,7 +59,7 @@ form.login .button:hover {
   opacity: 0.75;
 }
 
-button {
+.login .button {
   margin: 5px;
   background-color: transparent;
   border: none;
