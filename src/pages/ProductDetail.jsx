@@ -25,7 +25,7 @@ const ProductDetail = () => {
               </div>
               <ul className="producto-img-pri">
                 <li>
-                  <img src={productDetail.productImgs[0]} alt="" />
+                  <img src={productDetail.productImgs?.[0]} alt="" />
                 </li>
               </ul>
               <div className="button-gallery rigth">
@@ -74,14 +74,32 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-      <ul>
-        {relatedProducts.map((products) => (
-          <li key={products.id}>
-            {console.log(products)}
-            <Link to={`/product/${products.id}`}>{products.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <div className="home">
+        <ul className="products-list">
+          {relatedProducts.map((products) => (
+            <li className="product-card"
+              key={products.id}>
+              {console.log(products)}
+              <Link to={`/product/${products.id}`}>{products.title}</Link>
+
+              <img className="img-product" src={products.productImgs?.[0]} alt="" />
+              <section className="detail">
+                <h3 className="title">{products.title}</h3>
+                <div className="prices">
+                  <div className="price">
+                    <h4 className="lblprice">Price</h4>
+                    <h3>$ {products.price}</h3>
+                  </div>
+                  <div className="cart-icon">
+                    <img src={products.cart} alt="" />
+                  </div>
+                </div>
+              </section>
+            </li>
+          ))}
+        </ul>
+      </div>
+
     </div>
   );
 };
