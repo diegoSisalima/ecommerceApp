@@ -21,9 +21,7 @@ const ProductDetail = () => {
           <div className="images-gallery">
             <div className="gallery">
               <div className="button-gallery left">
-                <button>
-                  ◀
-                </button>
+                <button>◀</button>
               </div>
               <ul className="producto-img-pri">
                 <li>
@@ -31,15 +29,19 @@ const ProductDetail = () => {
                 </li>
               </ul>
               <div className="button-gallery rigth">
-                <button>
-                  ▶
-                </button>
+                <button>▶</button>
               </div>
             </div>
             <ul className="product-gallery">
-              <li className="selected"><img src={productDetail.productImgs[0]} alt="" /></li>
-              <li className="selected"><img src={productDetail.productImgs[1]} alt="" /></li>
-              <li className="selected"><img src={productDetail.productImgs[2]} alt="" /></li>
+              <li className="selected">
+                <img src={productDetail.productImgs[0]} alt="" />
+              </li>
+              <li className="selected">
+                <img src={productDetail.productImgs[1]} alt="" />
+              </li>
+              <li className="selected">
+                <img src={productDetail.productImgs[2]} alt="" />
+              </li>
             </ul>
           </div>
         </div>
@@ -47,7 +49,10 @@ const ProductDetail = () => {
           <h2>{productDetail.title}</h2>
           <div className="productData">
             <p className="productDescription">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nemo ex obcaecati delectus ducimus quaerat quod doloribus fuga ipsa tempore. Quod aperiam natus modi doloribus eos fugit dignissimos ipsam eum?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+              nemo ex obcaecati delectus ducimus quaerat quod doloribus fuga
+              ipsa tempore. Quod aperiam natus modi doloribus eos fugit
+              dignissimos ipsam eum?
             </p>
             <div className="product-options">
               <ul>
@@ -58,12 +63,10 @@ const ProductDetail = () => {
                 <div className="label">Quantity</div>
                 <div className="flex">
                   <button disabled>
-                   <i className="icon-minus">-</i>
+                    <i className="icon-minus">-</i>
                   </button>
                   <div className="value">1</div>
-                  <button>
-                    +
-                  </button>
+                  <button>+</button>
                 </div>
               </div>
             </div>

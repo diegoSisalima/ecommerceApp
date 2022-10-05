@@ -46,6 +46,10 @@ const Nav = () => {
             Logout
           </Link>
         </li>
+        <li>
+          {/* <a href="#/">Enlace tres</a> */}
+          <Link to="/sidebar">sidebar</Link>
+        </li>
       </ul>
       <div className="icons">
         <li>
@@ -62,7 +66,7 @@ const Nav = () => {
         </li>
         <li>
           {/* <a href="#/">Enlace uno</a> */}
-          <Link to="/">
+          <Link to="/sidebar">
             <img src={cart} alt="" />
           </Link>
         </li>

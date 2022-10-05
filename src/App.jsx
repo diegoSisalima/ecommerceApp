@@ -11,6 +11,7 @@ import { getProductsThunk } from "./store/slices/products.slice";
 import { useEffect } from "react";
 import "./App.css";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import CartSidebar from "./components/CartSidebar";
 
 function App() {
   const isLoading = useSelector((state) => state.isLoading);
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/sidebar" element={<CartSidebar />} />
           <Route element={<ProtectedRoutes />}>
             <Route path="/purchases" element={<Purchases />} />
           </Route>
