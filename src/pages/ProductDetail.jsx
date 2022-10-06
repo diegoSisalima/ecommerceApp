@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import { addCartthunk } from "../store/slices/cart.slice";
+import cart from "..//assets/img/cart.svg";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -110,7 +111,7 @@ const ProductDetail = () => {
                       <h3>$ {products.price}</h3>
                     </div>
                     <div className="cart-icon">
-                      <img src={products.cart} alt="" />
+                      <img src={cart} alt="" />
                     </div>
                   </div>
                 </section>
