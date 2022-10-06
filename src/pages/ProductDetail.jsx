@@ -68,9 +68,7 @@ const ProductDetail = () => {
         <div className="col">
           <h2>{productDetail.title}</h2>
           <div className="productData">
-            <p className="productDescription">
-              {productDetail?.description}
-            </p>
+            <p className="productDescription">{productDetail?.description}</p>
             <div className="product-options">
               <ul>
                 <li className="price">Price</li>
@@ -97,26 +95,26 @@ const ProductDetail = () => {
         <ul className="products-list">
           {relatedProducts.map((products) => (
             <li className="product-card" key={products.id}>
-              {console.log(products)}
-              <Link to={`/product/${products.id}`}>{products.title}</Link>
-
-              <img
-                className="img-product"
-                src={products.productImgs?.[0]}
-                alt=""
-              />
-              <section className="detail">
-                <h3 className="title">{products.title}</h3>
-                <div className="prices">
-                  <div className="price">
-                    <h4 className="lblprice">Price</h4>
-                    <h3>$ {products.price}</h3>
+              <Link to={`/product/${products.id}`}>
+                {console.log(products)}
+                <img
+                  className="img-product"
+                  src={products.productImgs?.[0]}
+                  alt=""
+                />
+                <section className="detail">
+                  <h3 className="title">{products.title}</h3>
+                  <div className="prices">
+                    <div className="price">
+                      <h4 className="lblprice">Price</h4>
+                      <h3>$ {products.price}</h3>
+                    </div>
+                    <div className="cart-icon">
+                      <img src={products.cart} alt="" />
+                    </div>
                   </div>
-                  <div className="cart-icon">
-                    <img src={products.cart} alt="" />
-                  </div>
-                </div>
-              </section>
+                </section>
+              </Link>
             </li>
           ))}
         </ul>
