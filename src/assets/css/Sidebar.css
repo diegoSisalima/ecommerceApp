@@ -1,7 +1,7 @@
 .cart {
   /*variables*/
   --top-position: 40px;
-  --bg-color: chocolate;
+  
 
   position: fixed;
   /* right: 0; */
@@ -13,7 +13,59 @@
 }
 .cart.show {
   right: 0;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
 }
 .cart.hide {
   right: -100%;
 }
+
+.name-sidebar {
+  margin: 10px;
+}
+
+.name-sidebar span {
+  color: lightgray;
+}
+
+.name-sidebar h3 {
+  margin: 0 10px;
+  color: #003f5c;
+}
+
+.info-sidebar {
+  display: flex;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.quantity-sidebar {
+  background-color: white;
+  padding: 0 10px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid lightgray;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.pricer-sidebar {
+  margin-top: 40px;
+}
+
+.info-sidebar span {
+  margin: 5px;
+}
+
+.sidebar-button {
+  background-color: #003f5c;
+  color: white;
+  font-size: 1.1rem;
+  /* margin: 40px; */
+  margin-bottom: 50px;
+  padding: 15px;
+  width: 100%;
+  border: none;
+}
+

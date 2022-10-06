@@ -198,6 +198,7 @@ button {
 
 .productInfo img {
   width: 35%;
+  height: auto;
 }
 
 .product-gallery img {
@@ -222,7 +223,8 @@ button {
 }
 
 .selected img {
-  width: 35%;
+  width: 30%;
+  height: auto;
   object-fit: contain;
 }
 
