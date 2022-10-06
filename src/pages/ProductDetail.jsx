@@ -1,17 +1,37 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
+import { addCartthunk } from "../store/slices/cart.slice";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const productsList = useSelector((state) => state.products);
+  const [rate, setRate] = useState(5);
+
   const productDetail = productsList.find(
     (products) => products.id === Number(id)
   );
+
   const relatedProducts = productsList.filter(
     (products) => products.category.id === productDetail.category.id
   );
+
+  useEffect(() => {
+    setRate(5);
+  }, [id]);
+
+  const addCart = () => {
+    alert("añadiendo" + rate);
+    const cart = {
+      id: id,
+      quantity: rate,
+    };
+    dispatch(addCartthunk(cart));
+  };
 
   return (
     <div className="product">
@@ -62,27 +82,32 @@ const ProductDetail = () => {
               <div className="quantity">
                 <div className="label">Quantity</div>
                 <div className="flex">
-                  <button disabled>
+                  <button onClick={() => setRate(rate - 1)}>
                     <i className="icon-minus">-</i>
                   </button>
-                  <div className="value">1</div>
-                  <button>+</button>
+                  <div className="value">{rate}</div>
+                  <button onClick={() => setRate(rate + 1)}>+</button>
                 </div>
               </div>
             </div>
-            <button className="productButton">Add to cart</button>
+            <button className="productButton" onClick={addCart}>
+              Add to cart
+            </button>
           </div>
         </div>
       </div>
       <div className="home">
         <ul className="products-list">
           {relatedProducts.map((products) => (
-            <li className="product-card"
-              key={products.id}>
+            <li className="product-card" key={products.id}>
               {console.log(products)}
               <Link to={`/product/${products.id}`}>{products.title}</Link>
 
-              <img className="img-product" src={products.productImgs?.[0]} alt="" />
+              <img
+                className="img-product"
+                src={products.productImgs?.[0]}
+                alt=""
+              />
               <section className="detail">
                 <h3 className="title">{products.title}</h3>
                 <div className="prices">
@@ -99,7 +124,6 @@ const ProductDetail = () => {
           ))}
         </ul>
       </div>
-
     </div>
   );
 };

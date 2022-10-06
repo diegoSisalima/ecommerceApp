@@ -1,7 +1,11 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartThunk } from "../store/slices/cart.slice";
+import {
+  addCartthunk,
+  getCartThunk,
+  purchasesCartthunk,
+} from "../store/slices/cart.slice";
 import { Link } from "react-router-dom";
 import "../assets/css/Sidebar.css";
 
@@ -12,6 +16,11 @@ const Sidebar = ({ show }) => {
   useEffect(() => {
     dispatch(getCartThunk());
   }, []);
+
+  const purchasesCart = () => {
+    alert("despachando cart");
+    dispatch(purchasesCartthunk());
+  };
 
   return (
     <div className={`cart ${show ? "show" : "hide"}`}>
@@ -29,7 +38,7 @@ const Sidebar = ({ show }) => {
           </li>
         ))}
       </ul>
-      <button>Checkout</button>
+      <button onClick={purchasesCart}>Checkout</button>
     </div>
   );
 };
