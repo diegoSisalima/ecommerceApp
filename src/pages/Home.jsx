@@ -40,19 +40,23 @@ const Home = () => {
   };
   return (
     <div className="home">
-      <h1>Estas en home</h1>
-      <input
-        type="text"
-        placeholder="search product"
-        onChange={(e) => setSearchValue(e.target.value)}
-        value={searchValue}
-      />
-      <button onClick={searchProducts}>Search</button>
-      {categories.map((category) => (
-        <button key={category.id} onClick={() => filterCategory(category.id)}>
-          {category.name}
-        </button>
-      ))}
+      <h1 className="homePage">Home</h1>
+      <div className="search-product">
+        <input
+          type="text"
+          placeholder="search product"
+          onChange={(e) => setSearchValue(e.target.value)}
+          value={searchValue}
+        />
+        <button className="search" onClick={searchProducts}></button>
+      </div>
+      <div className="category-home">
+        {categories.map((category) => (
+          <button key={category.id} onClick={() => filterCategory(category.id)}>
+            {category.name}
+          </button>
+        ))}
+      </div>
       <ul className="products-list">
         {productsFiltered.map((product) => (
           <li

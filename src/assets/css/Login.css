@@ -10,7 +10,6 @@ form.login {
   --bg-color-form: #003f5c;
   --color: whitesmoke;
   --color-placeholder: #cbd8df;
-  --bg-color-button: chocolate;
 
   max-width: var(--max-width-form);
 
@@ -48,11 +47,11 @@ form.login .input::placeholder {
 }
 form.login .button {
   min-height: 42px;
-  background-color: var(--bg-color-button);
   color: whitesmoke;
   font-weight: bold;
   font-size: x-large;
   border-radius: 6px;
+  border: solid;
 }
 form.login .button:hover {
   cursor: pointer;

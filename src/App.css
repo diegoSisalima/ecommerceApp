@@ -4,7 +4,6 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  /* border: solid 1px chocolate; */
 }
 
 button {
@@ -13,6 +12,15 @@ button {
 }
 
 /*HOME.jsx*/
+
+.home {
+  padding-bottom: 40px;
+}
+.homePage {
+  padding: 10px;
+  margin: 10px;
+}
+
 .home .products-list {
   display: flex;
   flex-wrap: wrap;
@@ -74,6 +82,57 @@ button {
   width: 70%;
   height: auto;
 }
+
+/* SEARCH */
+
+.search-product {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+}
+
+.search-product input {
+  width: 50%;
+  filter: drop-shadow(4px 4px 4px #003f5c);
+}
+
+.search {
+  background-image: url(./assets/img/search.png);
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  filter: drop-shadow(4px 4px 4px #003f5c);
+  background-color: #003f5c;
+}
+
+/* CATEGORY */
+.category-home {
+  height: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+  padding-bottom: 50px;
+}
+
+.category-home  button{
+  width: 130px;
+  height: 30px;
+  border: solid #003f5c;
+  color: #003f5c;
+  font-size: 20px;
+  transition: color 0.25s linear, transform 0.07s linear,
+  background-color 0.5s linear;
+  background-color: transparent;
+}
+
+.category-home button:hover {
+  color: var(--color-a-hover);
+  background: var(--bg-a-hover);
+  transform: scale(1.1);
+}
+
 
 /* STYLE productDetail */
 .product {
@@ -231,7 +290,7 @@ button {
 /* PURCHASES */
 
 .header h3 {
-  font-family: Yantramanav,sans-serif;
+  font-family: Yantramanav, sans-serif;
 }
 
 .purchases {
@@ -269,6 +328,7 @@ button {
 }
 
 .quantity-purchase {
+  background-color: #003f5c;
   padding: 0 10px;
   width: 53px;
   height: 35px;
@@ -279,10 +339,11 @@ button {
   margin-top: 5px;
   max-width: 65px;
   text-align: center;
+  color: aliceblue;
 }
 
 .price-purchases {
   text-align: center;
   width: 17%;
-  font-family: Yantramanav,sans-serif;
+  font-family: Yantramanav, sans-serif;
 }

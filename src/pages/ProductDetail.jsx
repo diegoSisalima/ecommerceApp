@@ -35,7 +35,7 @@ const ProductDetail = () => {
 
   return (
     <div className="product">
-      <h1>Estas en Product Detail</h1>
+      <h1 className="homePage">Product</h1>
       <div className="productInfo">
         <div className="col">
           <div className="images-gallery">
@@ -69,10 +69,7 @@ const ProductDetail = () => {
           <h2>{productDetail.title}</h2>
           <div className="productData">
             <p className="productDescription">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-              nemo ex obcaecati delectus ducimus quaerat quod doloribus fuga
-              ipsa tempore. Quod aperiam natus modi doloribus eos fugit
-              dignissimos ipsam eum?
+              {productDetail?.description}
             </p>
             <div className="product-options">
               <ul>

@@ -17,7 +17,7 @@ const Purchases = () => {
 
   return (
     <div className="purchases">
-      <h1>Estas en Purchases</h1>
+      <h1 className="homePage">Purchases</h1>
       {purchases.map((element) => (
         <div className="purchase-item">
           <div className="header">
