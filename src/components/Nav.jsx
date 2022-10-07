@@ -29,7 +29,6 @@ const Nav = () => {
         <li className="logo">
           {/* <a href="#/">Enlace uno</a> */}
           <Link to="/">
-            <img src={react} alt="" />
             Ecommerce
           </Link>
         </li>

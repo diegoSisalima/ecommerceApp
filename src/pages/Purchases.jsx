@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { getPurchasesThunk } from "../store/slices/purchases.slice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Dates from "../components/Dates";
 
 const Purchases = () => {
   const dispatch = useDispatch();
@@ -19,10 +20,10 @@ const Purchases = () => {
     <div className="purchases">
       <h1 className="homePage">Purchases</h1>
       {purchases.map((element) => (
-        <div className="purchase-item">
+        console.log(element),
+        <div className="purchase-item" key={element.id}>
           <div className="header">
-            <h3> {element.createdAt} </h3>
-            {/* {format(new Date(), " ")} */}
+            <Dates date={element.createdAt} /> 
           </div>
           {element.cart.products.map((subElement) => (
             <ul className="purchase-products-list">
