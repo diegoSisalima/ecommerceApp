@@ -58,13 +58,13 @@ const Nav = () => {
         <div className="icons">
           <li>
             {/* <a href="#/">Enlace uno</a> */}
-            <Link to="/">
+            <Link to="/login">
               <img src={user} alt="" />
             </Link>
           </li>
           <li>
             {/* <a href="#/">Enlace uno</a> */}
-            <Link to="/">
+            <Link to="/purchases">
               <img src={archive} alt="" />
             </Link>
           </li>

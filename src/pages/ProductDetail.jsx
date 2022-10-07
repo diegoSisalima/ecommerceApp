@@ -6,12 +6,14 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { addCartthunk } from "../store/slices/cart.slice";
 import cart from "..//assets/img/cart.svg";
+/*estilos bootstrap */
+import Carousel from "react-bootstrap/Carousel";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const productsList = useSelector((state) => state.products);
-  const [rate, setRate] = useState(5);
+  const [rate, setRate] = useState(1);
 
   const productDetail = productsList.find(
     (products) => products.id === Number(id)
@@ -22,7 +24,7 @@ const ProductDetail = () => {
   );
 
   useEffect(() => {
-    setRate(5);
+    setRate(1);
   }, [id]);
 
   const addCart = () => {
@@ -39,8 +41,36 @@ const ProductDetail = () => {
       <h1 className="homePage">Product</h1>
       <div className="productInfo">
         <div className="col">
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={productDetail.productImgs?.[0]}
+                style={{ height: "300px" }}
+              />
+              <Carousel.Caption></Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={productDetail.productImgs?.[1]}
+                style={{ height: "300px" }}
+              />
+
+              <Carousel.Caption></Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={productDetail.productImgs?.[2]}
+                style={{ height: "300px", width: "300px" }}
+              />
+
+              <Carousel.Caption></Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
           <div className="images-gallery">
-            <div className="gallery">
+            {/* <div className="gallery">
               <div className="button-gallery left">
                 <button>◀</button>
               </div>
@@ -48,11 +78,17 @@ const ProductDetail = () => {
                 <li>
                   <img src={productDetail.productImgs?.[0]} alt="" />
                 </li>
+                <li>
+                  <img src={productDetail.productImgs?.[1]} alt="" />
+                </li>
+                <li>
+                  <img src={productDetail.productImgs?.[2]} alt="" />
+                </li>
               </ul>
               <div className="button-gallery rigth">
                 <button>▶</button>
               </div>
-            </div>
+            </div> */}
             <ul className="product-gallery">
               <li className="selected">
                 <img src={productDetail.productImgs[0]} alt="" />
@@ -104,13 +140,13 @@ const ProductDetail = () => {
                   alt=""
                 />
                 <section className="detail">
-                  <h3 className="title">{products.title}</h3>
+                  <h5 className="title">{products.title}</h5>
                   <div className="prices">
                     <div className="price">
-                      <h4 className="lblprice">Price</h4>
-                      <h3>$ {products.price}</h3>
+                      <h5 className="lblprice">Price</h5>
+                      <h5>$ {products.price}</h5>
                     </div>
-                    <div className="cart-icon">
+                    <div onClick={addCart} className="cart-icon">
                       <img src={cart} alt="" />
                     </div>
                   </div>

@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
+  text-decoration: none !important;
   list-style: none;
 }
 
@@ -31,7 +31,7 @@ button {
 .home .product-card {
   position: relative;
   width: 300px;
-  height: 360px;
+  height: 380px;
   border: 1px solid #003f5c80;
   border-radius: 1rem;
   cursor: pointer;
@@ -116,14 +116,14 @@ button {
   padding-bottom: 50px;
 }
 
-.category-home  button{
+.category-home button {
   width: 130px;
   height: 30px;
   border: solid #003f5c;
   color: #003f5c;
   font-size: 20px;
   transition: color 0.25s linear, transform 0.07s linear,
-  background-color 0.5s linear;
+    background-color 0.5s linear;
   background-color: transparent;
 }
 
@@ -132,7 +132,6 @@ button {
   background: var(--bg-a-hover);
   transform: scale(1.1);
 }
-
 
 /* STYLE productDetail */
 .product {
@@ -155,13 +154,22 @@ button {
 .productInfo {
   display: flex;
 }
-
+.producto-img-pri {
+  border: solid 1px chocolate;
+  height: 200px;
+  overflow: auto;
+}
 .producto-img-pri li {
+  border: solid 1px chocolate;
+  height: 200px;
   display: flex;
   justify-content: center;
   list-style: none;
 }
-
+/* CONTINUAR|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+.producto-img-pri.translate {
+}
+*/
 .images-gallery {
   margin-bottom: 20px;
   overflow: hidden;

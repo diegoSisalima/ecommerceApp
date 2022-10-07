@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { addCartthunk } from "../store/slices/cart.slice";
 import cart from "../assets/img/cart.svg";
 
 const Home = () => {
@@ -38,6 +39,24 @@ const Home = () => {
     );
     setProductsFiltered(filtered);
   };
+
+  /*cart */
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const [rate, setRate] = useState(1);
+
+  useEffect(() => {
+    setRate(1);
+  }, [id]);
+
+  const addCart = () => {
+    alert("añadiendo" + rate);
+    const cart = {
+      id: id,
+      quantity: rate,
+    };
+    dispatch(addCartthunk(cart));
+  };
   return (
     <div className="home">
       <h1 className="homePage">Home</h1>
@@ -66,15 +85,15 @@ const Home = () => {
           >
             <img className="img-product" src={product.productImgs[0]} alt="" />
             <section className="detail">
-              <h3 className="title">{product.title}</h3>
+              <h5 className="title">{product.title}</h5>
               <div className="prices">
                 <div className="price">
-                  <h4 className="lblprice">Price</h4>
-                  <h3>$ {product.price}</h3>
+                  <h5 className="lblprice">Price</h5>
+                  <h5>$ {product.price}</h5>
                 </div>
-                <div className="cart-icon">
+                {/* <div onClick={addCart} className="cart-icon">
                   <img src={cart} alt="" />
-                </div>
+                </div> */}
               </div>
             </section>
           </li>

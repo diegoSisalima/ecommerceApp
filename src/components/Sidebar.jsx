@@ -24,24 +24,31 @@ const Sidebar = ({ show }) => {
 
   return (
     <div className={`cart ${show ? "show" : "hide"}`}>
-      <h2>Carrito de compras</h2>
+      <h4>Carrito de compras</h4>
       <ul className="name-sidebar">
         {productsCart.map((item) => (
           <li key={item.id}>
-            <span>{item.brand}</span>
+            <p>{item.brand}</p>
             <Link to={`/product/${item.id}`}>
-              <h3>{item.title}</h3>
+              <h5>{item.title}</h5>
             </Link>
             <ul className="info-sidebar">
-              <li className="quantity-sidebar">{item.productsInCart.quantity}</li>
-              <li className="pricer-sidebar"><span>total:</span>{item.productsInCart.quantity * item.price}</li>
+              <li className="quantity-sidebar">
+                {item.productsInCart.quantity}
+              </li>
+              <li className="pricer-sidebar">
+                <span>total:</span>
+                {item.productsInCart.quantity * item.price}
+              </li>
             </ul>
           </li>
         ))}
       </ul>
       <hr />
       <div>
-        <button className="sidebar-button" onClick={purchasesCart}>Checkout</button>
+        <button className="sidebar-button" onClick={purchasesCart}>
+          Checkout
+        </button>
       </div>
     </div>
   );
