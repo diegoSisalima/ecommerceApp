@@ -42,7 +42,7 @@ const ProductDetail = () => {
       <div className="productInfo">
         <div className="col">
           <Carousel>
-            <Carousel.Item>
+            <Carousel.Item style={{ width: "auto" }}>
               <img
                 className="d-block w-100"
                 src={productDetail.productImgs?.[0]}
@@ -50,7 +50,7 @@ const ProductDetail = () => {
               />
               <Carousel.Caption></Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item style={{ width: "auto" }}>
               <img
                 className="d-block w-100"
                 src={productDetail.productImgs?.[1]}
@@ -59,11 +59,11 @@ const ProductDetail = () => {
 
               <Carousel.Caption></Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item style={{ width: "auto" }}>
               <img
                 className="d-block w-100"
                 src={productDetail.productImgs?.[2]}
-                style={{ height: "300px", width: "300px" }}
+                style={{ height: "300px" }}
               />
 
               <Carousel.Caption></Carousel.Caption>
